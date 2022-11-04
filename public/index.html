@@ -13,35 +13,57 @@
 </head>
 
 <body class="container">
-    <div class="container p-3">
+    <div class="title">
+        <h1>CHAT NODE.JS</h1>
+    </div>
+    <div id="chatContainer" class="row mt-5 content">
+        <div class="col-sm-6">
+            <ul id="ulMensajes"></ul>
 
-        <div id="content" class="row" >
-            <div class="col-md-2">
-                <div id="chat-content" class="col-md-6">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">
-                            <div id="chat" class="panel-body">
-
-                            </div>
-                            <div class="containerr">
-                                <div class="header">
-                                    <h1>Chat</h1>
-                                </div>
-                                <div id="divMensajes" class="body">
-                                </div>
-                                <div class="footer">
-                                    <form action="">
-                                        <input id="message" type="text" name="">
-                                        <button id="btnEnviar" type="submit">Enviar</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="containerr">
+                <div class="header">
+                    <h1>Chat</h1>
+                </div>
+                <div id="divMensajes" class="body">
+                </div>
+                <div class="footer">
+                    <form action="">
+                        <input id="message" type="text" name="">
+                        <button id="btnEnviar">Enviar</button>
+                    </form>
                 </div>
             </div>
         </div>
+
+
+        <div class="col-sm-4">
+            <h3>Users</h3>
+            <ul id="ulUsuarios">
+                <p class="user_online">
+                    <h5 class="text-success"> ◉ oscar </h5>
+                    <span class="fs-6 text-muted">-1234</span>
+                </p>
+                <p class="user_online">
+                    <h5 class="text-success"> ◉ oscar </h5>
+                    <span class="fs-6 text-muted">-1234</span>
+                </p>
+                <p class="user_online">
+                    <h5 class="text-success"> ◉ oscar </h5>
+                    <span class="fs-6 text-muted">-1234</span>
+                </p>
+            </ul>
+        </div>
     </div>
+
+    <div id="nickContainer" style="width: 300px;margin: 50px auto;">
+        <input  type="text" id="nickInput" class="form-control mb-1" placeholder="Enter your name" autocomplete="off">
+        <button class="btn btn-primary" type="submit" id="setNick">Entrar</button>
+        
+        <div class="alert alert-danger alert-dismissible" id="login-error" data-dismiss="alert" role="alert" style="display: none;">
+            Este nombre de usuario ya esta en uso
+        </div>
+    </div>
+
 
     <script src="./socket.io/socket.io.js"></script>
     <script src="./js/index.js"></script>

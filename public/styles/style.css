@@ -66,3 +66,25 @@ form button:hover{
     -ms-transition: 0.2s;
     -o-transition: 0.2s;
 }
+
+#ulUsuarios{
+    border: 5px solid rgb(38, 3, 77);
+    border-radius: 15px;
+}
+
+.user_online{
+    margin: 0;
+}
+
+h3{
+    color: rgb(255, 255, 255);
+    background-color: rgb(63, 28, 93);
+    margin: 10px;
+    padding: 5px;
+    width: 50%;
+    border-radius: 7px;
+}
+
+#chatContainer{
+    display: none;
+}
