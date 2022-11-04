@@ -9,35 +9,34 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Chat</title>
     <script src="https://code.jquery.com/jquery.js"></script>
+    <link href="./styles/style.css" rel="stylesheet" type="text/css">
 </head>
 
-<body>
+<body class="container">
     <div class="container p-3">
-        <div class="page-header">
-            <h1>Node.js Chat</h1>
-        </div>
 
-        <div id="content" class="row" style="height: 70%;">
+        <div id="content" class="row" >
             <div class="col-md-2">
                 <div id="chat-content" class="col-md-6">
                     <div class="panel panel-success">
                         <div class="panel-heading">
-                            <div class="input-group mb-3">
-                                chat
-                            </div>
                             <div id="chat" class="panel-body">
 
                             </div>
-
+                            <div class="containerr">
+                                <div class="header">
+                                    <h1>Chat</h1>
+                                </div>
+                                <div id="divMensajes" class="body">
+                                </div>
+                                <div class="footer">
+                                    <form action="">
+                                        <input id="message" type="text" name="">
+                                        <button id="btnEnviar" type="submit">Enviar</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <Form id="enviar-mensaje" class="input-group" style="text-align: center; margin: 0 auto;">
-                            <input type="text" id="message" class="form-control input-lg" >
-                            <span class="input-group-btn">
-                                <button class="btn btn-lg btn-primary" type="submit">Enviar</button>
-                            </span>
-                        </Form>
                     </div>
                 </div>
             </div>
@@ -45,27 +44,7 @@
     </div>
 
     <script src="./socket.io/socket.io.js"></script>
-    <script>
-        jQuery(($)=>{
-            const socket = io.connect();
-            const $messajeForm = $('#enviar-mensaje');
-            let $message = $('#message');
-            let $chat = $('#chat');
-
-            $messajeForm.submit((event)=>{
-                event.preventDefault();
-                if($message.val() !== ''){
-                    socket.emit('mandar-mensaje', $message.val());
-                }
-                $message.val('');
-            });
-
-            socket.on('nuevo-mensaje', (data)=>{
-                $chat.append(` - ${data.msg} \n`);
-            })
-
-        })
-    </script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
